@@ -40,7 +40,7 @@ func main() {
 	payload.SetAudience(&at)
 	payload.SetNotification(&n)
 	payload.SetMessage(&m)
-
+	payload.SetOptions(&jpush.Options{ApnsProduction: false})
 	// Send
 	c := jpush.NewJPushClient("appKey", "masterSecret") // appKey and masterSecret can be gotten from https://www.jiguang.cn/
 	data, err := payload.Bytes()
